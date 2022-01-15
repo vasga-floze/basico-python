@@ -1,8 +1,18 @@
 from this import d
 from tkinter import E
 
-#El uso de las triple comillas doble permiten escribir cadenas de texto de varias lineas.
+#definiendo una funcion
+def conversor(tipo_pesos, valor_dolar):
+    print("********" + tipo_pesos +" a dólares**********")
+    pesos = input("¿Cuántos "+ tipo_pesos +" tienes? \n")
+    pesos = float(pesos)
+    dolares = pesos / valor_dolar
+    dolares = round(dolares, 2)
+    dolares = str(dolares)
+    print("-----------------------------------------------------")
+    print("Tus " + tipo_pesos + " convertidos a dólares son $" + dolares + " dólares")
 
+#El uso de las triple comillas doble permiten escribir cadenas de texto de varias lineas.
 menu = """
 ¡Bienvenido al conversor de monedas! 💰
 
@@ -17,34 +27,10 @@ opcion = input(menu)
 
 #logica para procesar la opción ingresada por el usuario mediante condicionales
 if opcion == '1':
-    print("********Pesos colombianos a dólares**********")
-    pesos = input("¿Cuántos pesos colombianos tienes? \n")
-    pesos = float(pesos)
-    valor_dolar = 4007.24
-    dolares = pesos / valor_dolar
-    dolares = round(dolares, 2)
-    dolares = str(dolares)
-    print("-----------------------------------------------------")
-    print("Tus pesos convertidos a dólares son $" + dolares + " dólares")
+    conversor('pesos colombianos', 4007.2)
 elif opcion == '2':
-    print("********Pesos mexicanos a dólares**********")
-    pesos = input("¿cuantos pesos mexicanos tienes? \n")
-    pesos = float(pesos)
-    valor_dolar = 20.3049
-    dolares = pesos / valor_dolar
-    dolares = round(dolares, 2)
-    dolares = str(dolares)
-    print("-----------------------------------------------------")
-    print("Tus pesos son equivalentes a $" + dolares + " dólares")
+    conversor('pesos mexicanos',20.3049)
 elif opcion == '3':
-    print("********Soles peruanos a dólares**********")
-    soles = input("¿Cuántos soles tienes? \n")
-    soles = float(soles)
-    valor_dolar = 3.87221
-    dolares = soles / valor_dolar
-    dolares = round(dolares, 2)
-    dolares = str(dolares)
-    print("-----------------------------------------------------")
-    print("Tus soles son equivalentes a $" + dolares + " dólares")
+    conversor('soles',3.87221)
 else:
-    print('Ingresa una opción correta, por favor')
+    print('Ingresa una opción correcta, por favor')
